@@ -1,2 +1,3 @@
 # OhMyFood
-OhMyFood website pour Paris
+Améliorez l'interface d'un site mobile avec des animations CSS.
+OhMyFood pour Paris
