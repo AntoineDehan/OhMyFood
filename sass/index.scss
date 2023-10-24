@@ -27,7 +27,7 @@ $bg-color: #F6F6F6;
 
 * {
     font-family: Roboto, sans-serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 h1 {
@@ -35,7 +35,7 @@ h1 {
 }
 
 
-//.div witdh: 100% pour éviter la répétition?
+// HEADER  -- .div witdh: 100% pour éviter la répétition?
 header {
     display: flex;
     flex-direction: column;
@@ -67,6 +67,7 @@ header {
     margin-right: 8px;
 }
 
+// INTRODUCTION  --
 .introduction {
     display: flex;
     align-items: center;
@@ -83,7 +84,7 @@ header {
     }   
 }
 
-//Mettre les logos font awesome en gris?
+// FONCTIONNEMENT -- Mettre les logos font awesome en gris?
 .fonctionnement {
     display: flex;
     flex-direction: column;
@@ -118,3 +119,65 @@ header {
         color: $main-color
     }
 }
+
+// RESTAURANTS --
+.restaurants {
+    background-color: $bg-color;
+    padding-bottom: 100px;
+}
+
+.restaurants--div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    a {
+        width: 90%;
+    }
+    .restaurants--card {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        // width: 100%;
+        background-color: white;
+        border-radius: 25px;
+        img {
+            height: 70%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 25px 25px 0 0;
+        }
+    }
+    .restaurants--card-content {
+        display: flex;
+        justify-content: space-between;
+        .restaurants--card-text {
+            margin-left: 10px;
+            h2{
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+            p {
+                margin-top: 2px;
+            }
+        }
+        .fa-heart{
+            font-size: 1.5rem;
+            margin: 20px 20px 0 0;
+            
+        }
+     }
+     .nouveau {
+        background-color: #99E2D0;
+        color: #008766;
+        padding: 7px 13px 7px 13px;
+        font-size: 0.95rem;
+        border-radius: 3px;
+        position: absolute;
+        right: 45px;
+        bottom: 25px;
+     }
+}
+    
+
+
