@@ -1,8 +1,53 @@
+@keyframes chargement {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes chargement-transition {
+  0% {
+    z-index: 1;
+    opacity: 1;
+  }
+  75% {
+    z-index: 1;
+    opacity: 1;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
 * {
   font-family: Roboto, sans-serif;
   font-size: 1.05rem;
   padding: 0;
   margin: 0;
+}
+
+.loader {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F6F6F6;
+  animation: chargement-transition 3s forwards;
+}
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid lightgray;
+  border-top-color: #9356DC;
+  border-radius: 50%;
+  animation: chargement 0.75s ease 3;
 }
 
 h1 {
@@ -164,6 +209,9 @@ header .header--localisation {
   font-size: 1.5rem;
   margin: 20px 20px 0 0;
 }
+.restaurants--div .restaurants--card-content .fa-heart .fa-heart:hover {
+  background-color: #9356DC;
+}
 .restaurants--div .nouveau {
   background-color: #99E2D0;
   color: #008766;
@@ -175,6 +223,40 @@ header .header--localisation {
   top: 40px;
 }
 
+.test {
+  background: transparent;
+  border: none;
+}
+
+.coeur1 {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.coeur1:active + .coeur {
+  animation: heart 1s forwards;
+}
+
+.coeur {
+  color: purple;
+  z-index: -1;
+  opacity: 0;
+}
+
+@keyframes heart {
+  0% {
+    opacity: 0.1;
+    z-index: -1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
 footer {
   background-color: #353535;
   display: flex;
