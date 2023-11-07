@@ -118,16 +118,21 @@ header .header--localisation {
 }
 .introduction .introduction--cta:hover {
   background: linear-gradient(193deg, #a16be0, #ff93e1);
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.25);
 }
 
 .fonctionnement {
-  display: flex;
-  flex-direction: column;
   background-color: white;
   margin: 15px 10px 15px 10px;
 }
-.fonctionnement .icone {
+
+.fonctionnement--conteneur {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.icone {
   border: solid #9356DC;
   border-radius: 50%;
   width: 20px;
@@ -139,7 +144,8 @@ header .header--localisation {
   left: 10px;
   font-weight: 300;
 }
-.fonctionnement button {
+
+button {
   padding: 25px 9px 25px 9px;
   border: none;
   font-weight: bold;
@@ -151,9 +157,11 @@ header .header--localisation {
   box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.18);
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
-.fonctionnement .fa-store {
+
+.fa-store {
   color: #9356DC;
 }
 
@@ -262,6 +270,10 @@ footer {
   display: flex;
   flex-direction: column;
 }
+footer .footer--conteneur {
+  display: flex;
+  flex-direction: column;
+}
 footer .footer__logo {
   font-family: "Shrikhand", serif;
   font-weight: 100;
@@ -278,6 +290,56 @@ footer .footer__link {
 }
 footer .fa-solid {
   font-size: 0.85rem;
+}
+
+@media (min-width: 1024px) {
+  * {
+    font-size: 1.1rem;
+  }
+  .fonctionnement {
+    padding: 50px 0px 50px 0px;
+    margin: 0;
+  }
+  .title {
+    padding-left: 80px;
+  }
+  .fonctionnement--conteneur {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .fonctionnement--conteneur button {
+    padding: 20px 60px 20px 25px;
+  }
+  .restaurants .title {
+    padding-left: 80px;
+  }
+  .restaurants--div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .restaurants--div a {
+    width: 40%;
+    margin: 10px 0 35px 80px;
+  }
+  footer {
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top: 40px;
+  }
+  footer .footer--conteneur {
+    flex-direction: row;
+    gap: 10px;
+  }
+  footer .footer__logo {
+    margin: 20px 30px 32px 70px;
+  }
+  footer .spaced {
+    margin-right: 60px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -54,7 +54,7 @@ $footer-color: #353535;
         lighten($main-color, 5%),
         lighten($secondary-color, 5%)
         );
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -156,10 +156,14 @@ header {
 
 // FONCTIONNEMENT -- Mettre les logos font awesome en gris?
 .fonctionnement {
-    display: flex;
-    flex-direction: column;
     background-color: white;
     margin: 15px 10px 15px 10px;
+}
+    .fonctionnement--conteneur {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
     .icone {
         border: solid $main-color;
         border-radius: 50%;
@@ -184,14 +188,15 @@ header {
         box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.18);
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 20px;
     }
     .fa-store {
         color: $main-color
     }
-}
 
-// RESTAURANTS -- Seconde étiquette "Nouveau" à faire (??)
+
+// RESTAURANTS --
 .restaurants {
     background-color: $bg-color;
     padding-bottom: 100px;
@@ -303,6 +308,10 @@ footer {
     background-color: $footer-color;
     display: flex;
     flex-direction: column;
+    .footer--conteneur {
+        display: flex;
+        flex-direction: column;
+    }
     .footer__logo {
         @include logo-title;
         color: white;
@@ -321,4 +330,59 @@ footer {
     }
 }
 
-//loader test
+
+// INTERFACE DESKTOP -- 
+@media (min-width: 1024px) {
+    * {
+        font-size: 1.10rem;
+    }
+
+    //FONCTIONNEMENT --
+    .fonctionnement {
+        padding: 50px 0px 50px 0px;
+        margin: 0;
+    }
+    .title {
+        padding-left: 80px;
+    }
+    .fonctionnement--conteneur {
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        button {
+            padding: 20px 60px 20px 25px;
+        }
+    }
+    //RESTAURANTS --
+    .restaurants .title {
+        padding-left: 80px;
+    }
+    .restaurants--div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        a {
+            width: 40%;
+            margin: 10px 0 35px 80px;
+        }
+    }
+
+    footer {
+        flex-direction: row-reverse;
+        // justify-content: flex-start;
+        align-items: center;
+        padding-top: 40px;
+        .footer--conteneur {
+            flex-direction: row;
+            gap: 10px;
+        }
+        .footer__logo {
+            margin: 20px 30px 32px 70px;
+        }
+        .spaced {
+            margin-right: 60px;
+        }
+    }
+}
