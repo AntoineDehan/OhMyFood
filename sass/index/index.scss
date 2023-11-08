@@ -1,0 +1,394 @@
+//Variables et mixin générales//
+$main-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$bg-color: #F6F6F6;
+$footer-color: #353535;
+
+@mixin logo-title{
+    font-family: 'Shrikhand', serif;
+    font-weight: 100;
+}
+
+@mixin cta{
+    background: linear-gradient(193deg, $main-color -11.44%, $secondary-color 123.93%);
+    color: white;
+    font-size: 1rem;
+    padding: 14px 15px 14px 15px;
+    border: 0px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes chargement {
+    from { 
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+    
+}
+
+@keyframes chargement-transition {
+    0% {
+        z-index: 1;
+        opacity: 1;
+    }
+    75% {
+        z-index: 1;
+        opacity: 1;
+    }
+    100% {
+        z-index: -1;
+        opacity: 0;
+    }
+    
+}
+
+@mixin cta-hover {
+    background: linear-gradient(
+        193deg,
+        lighten($main-color, 5%),
+        lighten($secondary-color, 5%)
+        );
+    box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    font-family: Roboto, sans-serif;
+    font-size: 1.05rem;
+    padding: 0;
+    margin: 0;
+}
+
+//Chargement de la page
+.loader {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-color;
+    animation: chargement-transition 3s forwards;
+    &::after {
+        content: "";
+        width: 75px;
+        height: 75px;
+        border: 15px solid lightgray;
+        border-top-color: $main-color;
+        border-radius: 50%;
+        animation: chargement 0.75s ease 3;
+    }
+  }
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.title {
+    margin: 25px 0px 20px 20px;
+}
+
+
+// HEADER  -- .div witdh: 100% pour éviter la répétition?
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .header--logo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2px;
+        padding: 10px 0px 10px 0px;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.16);
+        img {
+            width: 175px;
+            height: 35px;
+        }
+    }
+    .header--localisation {
+    background-color: #EAEAEA;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 18px 0 18px 0;
+    }
+}
+
+.fa-location-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+// INTRODUCTION  --
+.introduction {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $bg-color;
+    h1, p {
+        text-align: center;
+        margin: 25px 20px 5px 20px;
+    }
+    h1 {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .introduction--cta {
+        @include cta;
+        margin-top: 25px;
+        margin-bottom: 55px;
+    }
+    .introduction--cta:hover {
+       @include cta-hover;
+    }   
+}
+
+// FONCTIONNEMENT -- Mettre les logos font awesome en gris?
+.fonctionnement {
+    background-color: white;
+    margin: 15px 10px 15px 10px;
+}
+    .fonctionnement--conteneur {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .icone {
+        border: solid $main-color;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        color: white;
+        background-color: $main-color;
+        position: absolute;
+        left: -10px;
+        font-weight: 300;
+    }
+    button {
+        padding: 25px 9px 25px 9px;
+        position: relative;
+        border: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        background-color: $bg-color;
+        box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.18);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .fa-store {
+        color: $main-color
+    }
+
+
+// RESTAURANTS --
+.restaurants {
+    background-color: $bg-color;
+    padding-bottom: 100px;
+    padding-top: 15px;
+    a:visited {
+        color: black;
+    }
+}
+
+.restaurants--div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    a {
+        width: 90%;
+        text-decoration: none;
+    }
+    .restaurants--card {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        background-color: white;
+        border-radius: 25px;
+        position: relative;
+        img {
+            height: 70%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 25px 25px 0 0;
+        }
+    }
+    .restaurants--card-content {
+        display: flex;
+        justify-content: space-between;
+        .restaurants--card-text {
+            margin-left: 10px;
+            h2{
+                font-size: 20px;
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+            p {
+                margin-top: 2px;
+            }
+        }
+        .fa-heart{
+            font-size: 1.5rem;
+            margin: 20px 20px 0 0;
+            .fa-heart:hover {
+                background-color: $main-color;
+            }
+        }
+     }
+     .nouveau {
+        background-color: #99E2D0;
+        color: #008766;
+        padding: 7px 13px 7px 13px;
+        font-size: 0.95rem;
+        border-radius: 3px;
+        position: absolute;
+        right: 30px;
+        top: 40px;
+     }
+}
+
+// En cours . . . -- Mettre les deux en absolute, coueur 1 en opacity 1 qui passe en 0 en hover, l'autre qui fait l'opposé
+.test {
+    background: transparent;
+    border: none;
+
+}
+
+.coeur1{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    overflow: hidden;
+    &:hover + .coeur {
+            animation: heart 1s forwards;
+        }
+    }
+
+.coeur{
+    background-color: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    z-index: -1;
+    opacity: 0;
+}
+
+
+
+@keyframes heart {
+    0% {
+        opacity: 0.1;
+        z-index: -1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        z-index: 0;
+    }
+    
+}
+
+// FOOTER --
+footer {
+    background-color: $footer-color;
+    display: flex;
+    flex-direction: column;
+    .footer--conteneur {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer__logo {
+        @include logo-title;
+        color: white;
+        margin: 15px 0px 15px 15px;
+        font-size: 1.1rem;
+    }
+    .footer__link {
+        margin-left: 15px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+        font-size: 0.9rem;
+    }
+    .fa-solid {
+        font-size: 0.85rem;
+    }
+}
+
+
+// INTERFACE DESKTOP -- 
+@media (min-width: 1024px) {
+    * {
+        font-size: 1.10rem;
+    }
+
+    //FONCTIONNEMENT --
+    .fonctionnement {
+        padding: 50px 0px 50px 0px;
+        margin: 0;
+    }
+    .title {
+        padding-left: 80px;
+    }
+    .fonctionnement--conteneur {
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        .icone {
+            left:-10px;
+        }
+        button {
+            padding: 20px 60px 20px 25px;
+            font-size: 0.9rem;
+        }
+    }
+    //RESTAURANTS --
+    .restaurants .title {
+        padding-left: 80px;
+    }
+    .restaurants--div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        a {
+            width: 40%;
+            margin: 10px 0 35px 80px;
+        }
+    }
+
+    footer {
+        flex-direction: row-reverse;
+        // justify-content: flex-start;
+        align-items: center;
+        padding-top: 40px;
+        .footer--conteneur {
+            flex-direction: row;
+            gap: 10px;
+        }
+        .footer__logo {
+            margin: 20px 30px 32px 70px;
+        }
+        .spaced {
+            margin-right: 60px;
+        }
+    }
+}

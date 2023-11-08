@@ -1,0 +1,133 @@
+footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+}
+footer .footer--conteneur {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer__logo {
+  font-family: "Shrikhand", serif;
+  font-weight: 100;
+  color: white;
+  margin: 15px 0px 15px 15px;
+  font-size: 1.1rem;
+}
+footer .footer__link {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+}
+footer .fa-solid {
+  font-size: 0.85rem;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  font-size: 1.05rem;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #F6F6F6;
+}
+
+.logo-title {
+  font-family: "Shrikhand", serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+header {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15x 20px 15px;
+}
+
+.restaurant {
+  height: 220px;
+}
+.restaurant img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  margin: 10px;
+  background-color: #F6F6F6;
+}
+.menu .menu--introduction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.menu--etape {
+  background-color: #F6F6F6;
+  margin-bottom: 40px;
+}
+.menu--etape span {
+  text-underline-offset: 0.5rem;
+  text-decoration: underline #99E2D0 3px;
+}
+.menu--etape h2 {
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.menu--etape .menu--plats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+.menu--etape .menu--plats .btn {
+  display: flex;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  position: relative;
+  background-color: white;
+  box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.2);
+}
+.menu--etape .menu--plats .text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+.menu--etape .menu--plats .menu--prix {
+  font-weight: bold;
+  position: absolute;
+  right: 23px;
+  bottom: 15px;
+}
+.menu--etape .menu--plats p {
+  font-size: 0.9rem;
+}
+
+.cta--conteneur {
+  display: flex;
+  justify-content: center;
+}
+.cta--conteneur .cta {
+  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  color: white;
+  font-size: 1rem;
+  padding: 14px 15px 14px 15px;
+  border: 0px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  font-size: 1.2rem;
+  padding: 15px 50px 15px 50px;
+}
+
+/*# sourceMappingURL=restaurant_1.css.map */

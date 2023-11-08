@@ -1,0 +1,102 @@
+@use "../style.scss" as *;
+
+* {
+  font-family: Roboto, sans-serif;
+  font-size: 1.05rem;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+.logo-title {
+  @include logo-title;
+  font-size: 1.5rem;
+}
+
+// HEADER --
+header {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15x 20px 15px;
+}
+
+// IMG
+.restaurant {
+  height: 220px;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+// MENU --
+.menu {
+  margin: 10px;
+  background-color: $bg-color;
+  .menu--introduction {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+}
+
+.menu--etape {
+  background-color: $bg-color;
+  margin-bottom: 40px;
+  span {
+    text-underline-offset: 0.5rem;
+    text-decoration: underline $tertiary-color 3px;
+  }
+  h2 {
+    margin-bottom: 15px;
+    font-weight: 400;
+  }
+  .menu--plats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    .btn {
+      display: flex;
+      padding: 15px;
+      border: none;
+      border-radius: 25px;
+      position: relative;
+      background-color: white;
+      box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.2);
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+    }
+    .menu--prix {
+      font-weight: bold;
+      position: absolute;
+      right: 23px;
+      bottom: 15px;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// COMMANDER --
+.cta--conteneur {
+  display: flex;
+  justify-content: center;
+  .cta {
+    @include cta;
+    font-size: 1.2rem;
+    padding: 15px 50px 15px 50px;
+  }
+}
