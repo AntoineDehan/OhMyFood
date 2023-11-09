@@ -7,10 +7,6 @@
   margin: 0;
 }
 
-body {
-  background-color: $bg-color;
-}
-
 .logo-title {
   @include logo-title;
   font-size: 1.5rem;
@@ -28,8 +24,10 @@ header {
 // IMG
 .restaurant {
   height: 220px;
+  padding: 0;
+  margin: 0;
   img {
-    height: 100%;
+    height: 120%;
     width: 100%;
     object-fit: cover;
   }
@@ -37,12 +35,20 @@ header {
 
 // MENU --
 .menu {
-  margin: 10px;
-  background-color: $bg-color;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  .menu--conteneur {
+    width: 100%;
+    background-color: $bg-color;
+    padding: 60px 30px 20px 30px;
+    border-radius: 50px 50px 0px 0px;
+  }
   .menu--introduction {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
     margin-bottom: 15px;
   }
 }
@@ -99,4 +105,29 @@ header {
     font-size: 1.2rem;
     padding: 15px 50px 15px 50px;
   }
+}
+
+// INTERFACE DESKTOP --
+@media (min-width: 1024px) {
+  .menu {
+    .menu--conteneur {
+      width: 80%;
+    }
+  }
+
+  footer {
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top: 40px;
+    .footer--conteneur {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .footer__logo {
+        margin: 20px 30px 32px 70px;
+    }
+    .spaced {
+        margin-right: 60px;
+    }
+}
 }
