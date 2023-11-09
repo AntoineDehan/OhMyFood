@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F6F6F6;
+  background: #f6f6f6;
   animation: chargement-transition 3s forwards;
 }
 .loader::after {
@@ -45,7 +45,7 @@
   width: 75px;
   height: 75px;
   border: 15px solid lightgray;
-  border-top-color: #9356DC;
+  border-top-color: #9356dc;
   border-radius: 50%;
   animation: chargement 0.75s ease 3;
 }
@@ -76,7 +76,7 @@ header .header--logo img {
   height: 35px;
 }
 header .header--localisation {
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -94,9 +94,10 @@ header .header--localisation {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
-.introduction h1, .introduction p {
+.introduction h1,
+.introduction p {
   text-align: center;
   margin: 25px 20px 5px 20px;
 }
@@ -105,7 +106,7 @@ header .header--localisation {
   margin-right: 40px;
 }
 .introduction .introduction--cta {
-  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   color: white;
   font-size: 1rem;
   padding: 14px 15px 14px 15px;
@@ -133,13 +134,13 @@ header .header--localisation {
 }
 
 .icone {
-  border: solid #9356DC;
+  border: solid #9356dc;
   border-radius: 50%;
   width: 20px;
   height: 20px;
   text-align: center;
   color: white;
-  background-color: #9356DC;
+  background-color: #9356dc;
   position: absolute;
   left: -10px;
   font-weight: 300;
@@ -154,7 +155,7 @@ button {
   border-radius: 20px;
   margin-bottom: 10px;
   margin-left: 15px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.18);
   display: flex;
   justify-content: center;
@@ -163,11 +164,11 @@ button {
 }
 
 .fa-store {
-  color: #9356DC;
+  color: #9356dc;
 }
 
 .restaurants {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding-bottom: 100px;
   padding-top: 15px;
 }
@@ -182,10 +183,12 @@ button {
   gap: 15px;
 }
 .restaurants--div a {
-  width: 90%;
+  width: 100%;
+  height: 70%;
   text-decoration: none;
 }
 .restaurants--div .restaurants--card {
+  width: 90%;
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -194,7 +197,7 @@ button {
   position: relative;
 }
 .restaurants--div .restaurants--card img {
-  height: 70%;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 25px 25px 0 0;
@@ -219,10 +222,10 @@ button {
   margin: 20px 20px 0 0;
 }
 .restaurants--div .restaurants--card-content .fa-heart .fa-heart:hover {
-  background-color: #9356DC;
+  background-color: #9356dc;
 }
 .restaurants--div .nouveau {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #008766;
   padding: 7px 13px 7px 13px;
   font-size: 0.95rem;
@@ -230,11 +233,6 @@ button {
   position: absolute;
   right: 30px;
   top: 40px;
-}
-
-.test {
-  background: transparent;
-  border: none;
 }
 
 .coeur1 {
@@ -248,11 +246,12 @@ button {
 }
 
 .coeur {
-  background-color: linear-gradient(to right, #30CFD0 0%, #330867 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: linear-gradient(to right, #30CFD0 0%, #330867 100%);
   z-index: -1;
-  opacity: 0;
+  background: linear-gradient(45deg, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 @keyframes heart {
@@ -265,7 +264,7 @@ button {
   }
   100% {
     opacity: 1;
-    z-index: 0;
+    z-index: 1;
   }
 }
 footer {
@@ -326,11 +325,17 @@ footer .fa-solid {
   .restaurants--div {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 80px;
+  }
+  .restaurants--div .restaurants--card {
+    width: 40%;
+    height: 250px;
+    margin-bottom: -40px;
   }
   .restaurants--div a {
-    width: 40%;
-    margin: 10px 0 35px 80px;
+    width: 100%;
+    height: 70%;
   }
   footer {
     flex-direction: row-reverse;
