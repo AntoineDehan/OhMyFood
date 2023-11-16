@@ -51,6 +51,9 @@ header {
     gap: 15px;
     margin-bottom: 15px;
   }
+  .logo-title {
+    background-color: $bg-color;
+  }
 }
 
 .menu--etape {
@@ -71,29 +74,89 @@ header {
     margin-top: 20px;
     .btn {
       display: flex;
-      padding: 15px;
+      // padding: 15px;
       border: none;
       border-radius: 25px;
       position: relative;
       background-color: white;
       box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.2);
     }
-    .text {
+    .btn--conteneur {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 15px;
+      &:hover + .animation--test{
+        animation: save 1s forwards ease-in-out;
+        // transform: scaleX(1) translateX(0px);
+      }
+    }
+    .btn--text {
       display: flex;
       flex-direction: column;
       gap: 5px;
       align-items: flex-start;
     }
-    .menu--prix {
-      font-weight: bold;
-      position: absolute;
-      right: 23px;
-      bottom: 15px;
-    }
     p {
       font-size: 0.9rem;
     }
+    .animation--test {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 80px;
+      background-color: $tertiary-color;
+      border-radius: 0 25px 25px 0px;
+      margin-right: -200px;
+      transform-origin: right;
+      // transform: scaleX(0) translateX(0px);
+      // transition: transform 400ms ease-in-out;
+      .fa-check {
+        color: $tertiary-color;
+        background-color: white;
+        padding: 5px;
+        border-radius: 50%;
+      }
+    }
   }
+}
+
+@keyframes save {
+  from {
+    overflow: hidden;
+    opacity: 1;
+    margin-right: 0px;
+    transform: translateX(80px);
+  }
+  to {
+    overflow: visible;
+    opacity: 1;
+    margin-right: 0px;
+    transform: translateX(0px);
+  }
+  
+}
+
+.plats {
+  opacity: 0;
+  animation: menu 1000ms 500ms forwards;
+}
+
+.dessert {
+  opacity: 0;
+  animation: menu 1000ms 1500ms forwards;
+}
+
+@keyframes menu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  
 }
 
 // COMMANDER --
