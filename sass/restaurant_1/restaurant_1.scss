@@ -15,10 +15,16 @@
 // HEADER --
 header {
   display: flex;
-  gap: 50px;
+  // gap: 50px;
   align-items: center;
   justify-content: center;
   padding: 20px 15x 20px 15px;
+  .header--retour {
+    margin-right: auto;
+  }
+  .header--logo {
+    display: flex;
+  }
 }
 
 // IMG
@@ -41,7 +47,7 @@ header {
   .menu--conteneur {
     width: 100%;
     background-color: $bg-color;
-    padding: 60px 30px 20px 30px;
+    padding: 60px 10px 20px 10px;
     border-radius: 50px 50px 0px 0px;
   }
   .menu--introduction {
@@ -59,6 +65,10 @@ header {
 .menu--etape {
   background-color: $bg-color;
   margin-bottom: 40px;
+  p {
+    font-size: 0.85rem;
+    text-overflow: ellipsis; 
+  }
   span {
     text-underline-offset: 0.5rem;
     text-decoration: underline $tertiary-color 3px;
@@ -74,12 +84,24 @@ header {
     margin-top: 20px;
     .btn {
       display: flex;
-      // padding: 15px;
       border: none;
       border-radius: 25px;
+      overflow: hidden;
       position: relative;
       background-color: white;
       box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.2);
+      &:hover .menu--ajouter {
+        transform: translateX(-70px);
+      }
+      &:hover .menu--prix {
+        transform: translateX(-70px);
+      }
+    .menu--prix {
+      transition: transform 400ms;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-left: 0;
+    }
     }
     .btn--conteneur {
       width: 100%;
@@ -87,10 +109,6 @@ header {
       justify-content: space-between;
       align-items: end;
       padding: 15px;
-      &:hover + .animation--test{
-        animation: save 1s forwards ease-in-out;
-        // transform: scaleX(1) translateX(0px);
-      }
     }
     .btn--text {
       display: flex;
@@ -98,21 +116,17 @@ header {
       gap: 5px;
       align-items: flex-start;
     }
-    p {
-      font-size: 0.9rem;
-    }
-    .animation--test {
+
+    .menu--ajouter {
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-      width: 80px;
+      width: 70px;
+      margin-right: -70px;
       background-color: $tertiary-color;
       border-radius: 0 25px 25px 0px;
-      margin-right: -200px;
       transform-origin: right;
-      // transform: scaleX(0) translateX(0px);
-      // transition: transform 400ms ease-in-out;
+      transition: transform 400ms;
       .fa-check {
         color: $tertiary-color;
         background-color: white;
@@ -123,21 +137,6 @@ header {
   }
 }
 
-@keyframes save {
-  from {
-    overflow: hidden;
-    opacity: 1;
-    margin-right: 0px;
-    transform: translateX(80px);
-  }
-  to {
-    overflow: visible;
-    opacity: 1;
-    margin-right: 0px;
-    transform: translateX(0px);
-  }
-  
-}
 
 .plats {
   opacity: 0;
