@@ -28,7 +28,7 @@
 }
 
 .loader {
-  z-index: 1;
+  z-index: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -114,12 +114,26 @@ header .header--localisation {
   border-radius: 25px;
   margin-bottom: 30px;
   box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 0;
   margin-top: 25px;
   margin-bottom: 55px;
 }
-.introduction .introduction--cta:hover {
-  background: linear-gradient(193deg, #a16be0, #ff93e1);
-  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.25);
+.introduction .introduction--cta:hover .introduction--cta__bg {
+  opacity: 1;
+}
+.introduction .introduction--cta__bg {
+  background: linear-gradient(193deg, #a16be0 -11.44%, #ff93e1 123.93%);
+  position: absolute;
+  border-radius: 25px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 400ms;
+  cursor: pointer;
 }
 
 .fonctionnement {
@@ -127,7 +141,7 @@ header .header--localisation {
   margin: 15px 10px 15px 10px;
 }
 
-.fonctionnement--conteneur {
+.fonctionnement--buttons {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -235,18 +249,19 @@ button {
   top: 40px;
 }
 
+.restaurants--card-like:hover .coeur {
+  animation: heart 1s forwards;
+}
+
 .coeur1 {
   position: absolute;
   right: 0;
   z-index: 0;
   overflow: hidden;
 }
-.coeur1:hover + .coeur {
-  animation: heart 1s forwards;
-}
 
 .coeur {
-  z-index: -1;
+  opacity: 0;
   background: linear-gradient(45deg, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -257,14 +272,12 @@ button {
 @keyframes heart {
   0% {
     opacity: 0.1;
-    z-index: -1;
   }
   50% {
     opacity: 0.5;
   }
   100% {
     opacity: 1;
-    z-index: 1;
   }
 }
 footer {
@@ -299,33 +312,56 @@ footer .fa-solid {
     font-size: 1.1rem;
   }
   .fonctionnement {
-    padding: 50px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 180px 50px 180px;
     margin: 0;
+  }
+  .fonctionnement h1 {
+    padding-left: 0;
+    margin-left: 15px;
+  }
+  .fonctionnement .fonctionnement--conteneur {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .title {
     padding-left: 80px;
   }
-  .fonctionnement--conteneur {
+  .fonctionnement--buttons {
     flex-direction: row;
     justify-content: center;
     gap: 25px;
     margin-top: 25px;
     margin-bottom: 25px;
   }
-  .fonctionnement--conteneur .icone {
+  .fonctionnement--buttons .icone {
     left: -10px;
   }
-  .fonctionnement--conteneur button {
+  .fonctionnement--buttons button {
     padding: 20px 60px 20px 25px;
     font-size: 0.9rem;
   }
+  .restaurants {
+    display: flex;
+    justify-content: center;
+    padding: 15px 180px 100px 180px;
+  }
+  .restaurants .restaurants--conteneur {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .restaurants .title {
-    padding-left: 80px;
+    padding-left: 15px;
+    margin-bottom: 25px;
   }
   .restaurants--div {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 80px;
   }
   .restaurants--div .restaurants--card {
