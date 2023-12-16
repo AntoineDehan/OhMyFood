@@ -78,8 +78,6 @@ header {
   }
 }
 
-
-// Animation coeur a mettre dans style.css
 .restaurants--card-like:hover .coeur {
   animation: heart 1s forwards;
 }
@@ -165,6 +163,7 @@ header {
     }
     .btn--conteneur {
       width: 100%;
+      min-width: 50%;
       display: flex;
       justify-content: space-between;
       align-items: end;

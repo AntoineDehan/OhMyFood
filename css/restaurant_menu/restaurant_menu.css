@@ -197,6 +197,7 @@ header .header--blank {
 }
 .menu--etape .menu--plats .btn--conteneur {
   width: 100%;
+  min-width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: end;
